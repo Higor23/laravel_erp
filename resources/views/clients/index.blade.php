@@ -1,12 +1,15 @@
 @extends('clients.layout')
 
 @section('content')
-<div>
+<div class="form-client">
     <h4 class="h4">Clientes</h4>
+    <div class="btn-cad">
     <a href="{{ route('clients.create') }}">
         <button type=" button" class="btn btn-success">Novo Cliente</button>
     </a>
+
     <button type="button" class="btn btn-secondary">Imprimir</button>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Search">
@@ -23,7 +26,7 @@
                 <th scope="col">Telefone</th>
                 <th scope="col">Email</th>
                 <th scope="col">CPF</th>
-                <th scope="col">Ação</th>
+                <th scope="col"></th>
             </tr>
         </thead>
 

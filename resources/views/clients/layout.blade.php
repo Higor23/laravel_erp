@@ -14,11 +14,11 @@
 </head>
 
 
-<body class="container-body">
+<body class="body-login">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#">ERP</a>
+            <a class="navbar-brand" <a href="{{ route('login') }}">ERP</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,7 +28,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastros</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
                             <a class="dropdown-item" href="{{ route('clients.index') }}">Clientes</a>
                             <a class="dropdown-item" href="#">Fornecedores</a>
                             <a class="dropdown-item" href="#">Produtos</a>
@@ -37,7 +37,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Financeiro</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
                             <a class="dropdown-item" href="#">Movimentações</a>
                             <a class="dropdown-item" href="#">Receitas</a>
                             <a class="dropdown-item" href="#">Despesas</a>
@@ -47,14 +47,14 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Estoque</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
                             <a class="dropdown-item" href="#">Produtos</a>
                             <a class="dropdown-item" href="#">Compras</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vendas</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
                             <a class="dropdown-item" href="#">Pedidos</a>
                             <a class="dropdown-item" href="#">PDV</a>
                         </div>
@@ -63,8 +63,21 @@
             </div>
         </div>
     </nav>
-
+    <div class="container-body">
     @yield('content')
+
+    </div>
+
+    <footer>
+        <div class="rodape">
+            <div class="texto-rodape">
+                <p class= "contato-cactus">  Desenvolvido por Higor Prado - Todos os Direitos Reservados.</p>
+                <p class="contato-cactus" >Contato: desenvolvedor.higor@gmail.com</p>
+            </div>
+
+        </div>
+
+    </footer>
 
 </body>
 

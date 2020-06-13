@@ -6,8 +6,8 @@
 
 
 <div class="form-client">
-
-    <div class="pull-right">
+    <h4 class="h4">Cadastro</h4>
+    <div class="btn-cad">
         <a class="btn btn-primary" href="{{ route('clients.index') }}">Voltar</a>
     </div>
     <!-- Validação de erros conforme o model -->

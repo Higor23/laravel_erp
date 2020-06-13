@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/clients', 'ClientController');
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
