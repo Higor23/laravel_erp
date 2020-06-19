@@ -1,4 +1,4 @@
-@extends('clients.layout')
+@extends('template.template_base')
 
 @section('content')
 

@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/clients', 'ClientController');
+Route::resource('/products', 'ProductController');
 
 Auth::routes();
 

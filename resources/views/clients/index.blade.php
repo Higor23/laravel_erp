@@ -1,4 +1,4 @@
-@extends('clients.layout')
+@extends('template.template_base')
 
 @section('content')
 <div class="form-client">
@@ -32,7 +32,7 @@
 
         <tbody>
             @foreach ($clients as $client)
-            <a href="{{ route('clients.edit',$client->id) }}">
+            <!-- <a href="{{ route('clients.edit',$client->id) }}"> -->
                 <tr>
                     <td>{{ $client->id }}</td>
                     <td>{{ $client->Nome }}</td>
