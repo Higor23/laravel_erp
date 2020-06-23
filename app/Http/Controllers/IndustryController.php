@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\UnidadeMedida;
+use App\Industry;
 use Illuminate\Http\Request;
 
-class UnidadeMedidaController extends Controller
+class IndustryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class UnidadeMedidaController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class UnidadeMedidaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\UnidadeMedida  $unidadeMedida
+     * @param  \App\Industry  $industry
      * @return \Illuminate\Http\Response
      */
-    public function show(UnidadeMedida $unidadeMedida)
+    public function show(Industry $industry)
     {
         //
     }
@@ -52,10 +52,10 @@ class UnidadeMedidaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\UnidadeMedida  $unidadeMedida
+     * @param  \App\Industry  $industry
      * @return \Illuminate\Http\Response
      */
-    public function edit(UnidadeMedida $unidadeMedida)
+    public function edit(Industry $industry)
     {
         //
     }
@@ -64,10 +64,10 @@ class UnidadeMedidaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\UnidadeMedida  $unidadeMedida
+     * @param  \App\Industry  $industry
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UnidadeMedida $unidadeMedida)
+    public function update(Request $request, Industry $industry)
     {
         //
     }
@@ -75,10 +75,10 @@ class UnidadeMedidaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\UnidadeMedida  $unidadeMedida
+     * @param  \App\Industry  $industry
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UnidadeMedida $unidadeMedida)
+    public function destroy(Industry $industry)
     {
         //
     }

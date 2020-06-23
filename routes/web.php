@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::resource('/clients', 'ClientController');
 Route::resource('/products', 'ProductController');
+Route::resource('/industry', 'IndustryController');
+Route::resource('/providers', 'ProviderController');
 
 Auth::routes();
 

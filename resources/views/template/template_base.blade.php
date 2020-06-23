@@ -30,8 +30,8 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastros</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
                             <a class="dropdown-item" href="{{ route('clients.index') }}">Clientes</a>
-                            <a class="dropdown-item" href="#">Fornecedores</a>
-                            <a class="dropdown-item" href="#">Produtos</a>
+                            <a class="dropdown-item" href="{{ route('providers.index') }}">Fornecedores</a>
+                            <a class="dropdown-item" href="{{ route('products.index') }}">Produtos</a>
 
                         </div>
                     </li>

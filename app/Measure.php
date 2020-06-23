@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UnidadeMedida extends Model
-{   protected $table = 'unidadesMedida';
+class Measure extends Model
+{   protected $table = 'measures';
     protected $fillable = [
-        'unidadesMedida'
+        'unidadeMedida'
     ];
 }

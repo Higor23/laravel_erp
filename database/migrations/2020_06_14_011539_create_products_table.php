@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateProductsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
@@ -19,18 +15,14 @@ class CreateProductsTable extends Migration
             $table->float('quantidade', 10, 2);
             $table->float('preco', 10, 2);
             $table->float('custo', 10, 2);
-            $table->foreignId('unidadeMedida_id')->references('id')->on('unidadesMedida');
+            $table->foreignId('unidadeMedida_id')->references('id')->on('measures');
             $table->string('codBarras')->nullable($value = true);;
             $table->string('obs', 255)->nullable($value = true);;
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('products');
