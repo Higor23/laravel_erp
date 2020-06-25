@@ -22,6 +22,7 @@ Route::resource('/clients', 'ClientController');
 Route::resource('/products', 'ProductController');
 Route::resource('/industry', 'IndustryController');
 Route::resource('/providers', 'ProviderController');
+Route::resource('/accounts', 'AccountController');
 
 Auth::routes();
 
