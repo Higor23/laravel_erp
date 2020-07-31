@@ -41,7 +41,8 @@
                     <td>{{ $product->quantidade }}</td>
                     <td>{{ $product->preco }}</td>
                     <td>{{ $product->custo}}</td>
-                    <td>{{ $product->unidadeMedida_id }}</td>
+                    <!-- <td value="{{ $product->unidadeMedida_id }}">{{ $unidadesMedidas->unidadeMedida }}</td> -->
+
             </a>
             <td>
                 <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Detalhes</a>

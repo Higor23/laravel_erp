@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Account;
 use App\Renevue;
 use Illuminate\Http\Request;
 
@@ -17,25 +18,26 @@ class RenevueController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $contas = Account::all();
+
+        return view('renevue.create', ['contas' => $contas]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'vencimento' => 'required',
+            'conta_id' => 'required',
+            'descricao' => 'required',
+            'valor' => 'required',
+            'categoria' => 'required',
+        ]);
+
+        Renevue::create($request->all());
+
+        return redirect()->route('renevue.index');
     }
 
     /**

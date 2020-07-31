@@ -46,7 +46,7 @@
             </div>
             <div class="form-group col-md-3">
                 <label>Código de Barras</label>
-                <input type=" text" class="form-control" name="codBarras" placeholder="código de barras">
+                <input type=" text" class="form-control" name="codBar" placeholder="código de barras">
             </div>
 
         </div>
