@@ -19,11 +19,11 @@ class CreateRevenueTable extends Migration
             $table->foreignId('conta_id')->references('id')->on('accounts');
             $table->string('descricao');
             $table->float('valor');
-            $table->string('documento')->nullable($value = true);;
+            $table->string('documento')->nullable();;
             $table->string('categoria');
-            $table->date('recebimento')->nullable($value = true);
-            $table->string('tipoRecebimento')->nullable($value = true);
-            $table->string('obs')->nullable($value = true);
+            $table->date('recebimento')->nullable();
+            $table->string('tipoRecebimento')->nullable();
+            $table->string('obs')->nullable();
 
             $table->timestamps();
         });

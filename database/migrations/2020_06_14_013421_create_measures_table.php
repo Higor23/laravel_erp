@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductMeasureTable extends Migration
+class CreateMeasuresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateProductMeasureTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_measure', function (Blueprint $table) {
+        Schema::create('measures', function (Blueprint $table) {
             $table->increments('id');
-
-
+            $table->integer('product_id')->unsigned();
             $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->foreignId('measure_id')->references('id')->on('measures')->onDelete('cascade');
+            $table->string('name', 20);
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateProductMeasureTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_measure');
+        Schema::dropIfExists('measures');
     }
 }

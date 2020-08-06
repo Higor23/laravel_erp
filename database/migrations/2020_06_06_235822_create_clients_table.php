@@ -16,18 +16,18 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Nome', 100);
-            $table->string('Telefone_01', 11)->nullable($value = true);
-            $table->string('Telefone_02', 11)->nullable($value = true);
-            $table->string('Email', 100)->nullable($value = true);
-            $table->string('CPF')->nullable($value = true);
-            $table->string('CEP', 8)->nullable($value = true);
-            $table->string('Logradouro', 150)->nullable($value = true);
-            $table->string('Número', 10)->nullable($value = true);
-            $table->string('Bairro', 100)->nullable($value = true);
-            $table->string('Complemento', 50)->nullable($value = true);
-            $table->string('Município', 50)->nullable($value = true);
-            $table->string('Estado', 2)->nullable($value = true);
+            $table->string('name', 100);
+            $table->string('phone_01', 11)->nullable();
+            $table->string('phone_02', 11)->nullable();
+            $table->string('email', 100)->nullable();
+            $table->string('cpf')->nullable();
+            $table->string('cep', 8)->nullable();
+            $table->string('address', 150)->nullable();
+            $table->string('number', 10)->nullable();
+            $table->string('district', 100)->nullable();
+            $table->string('complement', 50)->nullable();
+            $table->string('county', 50)->nullable();
+            $table->string('state', 2)->nullable();
             $table->timestamps();
         });
     }
