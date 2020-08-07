@@ -15,7 +15,7 @@ class CreateMeasuresTable extends Migration
     {
         Schema::create('measures', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('product_id')->unsigned();
+            // $table->integer('product_id')->unsigned();
             $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->string('name', 20);
             $table->timestamps();

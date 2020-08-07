@@ -15,15 +15,16 @@ class CreateRevenueTable extends Migration
     {
         Schema::create('renevue', function (Blueprint $table) {
             $table->id();
-            $table->date('vencimento');
-            $table->foreignId('conta_id')->references('id')->on('accounts');
-            $table->string('descricao');
-            $table->float('valor');
-            $table->string('documento')->nullable();;
-            $table->string('categoria');
-            $table->date('recebimento')->nullable();
-            $table->string('tipoRecebimento')->nullable();
-            $table->string('obs')->nullable();
+            $table->date('dueDate');
+            // $table->integer('account_id')->unsigned();
+            $table->foreignId('account_id')->references('id')->on('accounts')->onDelete('cascade');
+            $table->string('description');
+            $table->float('value');
+            $table->string('document')->nullable();;
+            $table->string('category');
+            $table->date('receiptDate')->nullable();
+            $table->string('typeReceipt')->nullable();
+            $table->string('note')->nullable();
 
             $table->timestamps();
         });

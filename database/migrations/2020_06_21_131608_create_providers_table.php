@@ -20,8 +20,7 @@ class CreateProvidersTable extends Migration
             $table->string('cpfcnpj', 14);
             $table->string('phone_01', 11);
             $table->string('phone_02', 11)->nullable();
-            $table->string('email', 100)->nullable();
-            $table->foreignId('branch_id')->references('id')->on('industry');
+            $table->string('email', 100)->nullable();            
             $table->string('other', 50)->nullable();
             $table->string('indState', 10)->nullable();
             $table->string('iState', 9)->nullable();

@@ -16,27 +16,27 @@
         @csrf
         <div class="form-group">
             <label>Descrição</label>
-            <input type="text" class="form-control" name="descricao" placeholder="Descrição do Produto">
+            <input type="text" class="form-control" name="name" placeholder="Descrição do Produto">
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-1">
                 <label>Qtd.</label>
-                <input type=" text" class="form-control" name="quantidade" placeholder="Qtd.">
+                <input type=" text" class="form-control" name="number" placeholder="Qtd.">
             </div>
             <div class="form-group col-md-2">
                 <label>Preço</label>
-                <input type=" text" class="form-control" name="preco" placeholder="0,00">
+                <input type=" text" class="form-control" name="price" placeholder="0,00">
             </div>
             <div class="form-group col-md-2">
                 <label>Custo</label>
-                <input type=" text" class="form-control" name="custo" placeholder="0,00">
+                <input type=" text" class="form-control" name="cost" placeholder="0,00">
             </div>
 
             <div class="form-group col-md-2"">
                 <label for="inputState">Unidade de medida</label>
 
-                <select id="inputState" class="form-control" name="unidadeMedida_id">
+                <select id="inputState" class="form-control" name="measure_id">
                 <option selected>Selecione</option>
                     @foreach ($unidadeMedidas as $unidade)
                     <option selected value="{{ $unidade->id }}">{{ $unidade->unidadeMedida }}</option>

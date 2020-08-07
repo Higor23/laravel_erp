@@ -15,14 +15,14 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 30);
-            $table->string('banco', 30)->nullable();
-            $table->float('saldoinicial', 10, 2);
-            $table->string('agencia', 10)->nullable();;
-            $table->string('numero', 14)->nullable();;
-            $table->string('operacao', 10)->nullable();;
-            $table->string('telefone', 11)->nullable();;
-            $table->string('gerente', 20)->nullable();;
+            $table->string('name', 30);
+            $table->string('bank', 30)->nullable();
+            $table->float('opBalance', 10, 2);
+            $table->string('agency', 10)->nullable();;
+            $table->string('number', 14)->nullable();;
+            $table->string('operation', 10)->nullable();;
+            $table->string('phone', 11)->nullable();;
+            $table->string('manager', 20)->nullable();;
             $table->timestamps();
         });
     }

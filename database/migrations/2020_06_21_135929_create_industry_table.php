@@ -16,6 +16,8 @@ class CreateIndustryTable extends Migration
         Schema::create('industry', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
+            // $table->foreignId('provider_id')->unsigned();
+            $table->foreignId('provider_id')->references('id')->on('providers')->onDelete('cascade');
             $table->timestamps();
         });
     }

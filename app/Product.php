@@ -15,4 +15,11 @@ class Product extends Model
         'unidadeMedida'
 
     ];
+
+    public function measure() {
+        return $this->hasOne(Measure::class); 
+
+    }
+
+    
 }
