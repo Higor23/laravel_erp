@@ -38,8 +38,8 @@
 
                 <select id="inputState" class="form-control" name="measure_id">
                 <option selected>Selecione</option>
-                    @foreach ($unidadeMedidas as $unidade)
-                    <option selected value="{{ $unidade->id }}">{{ $unidade->unidadeMedida }}</option>
+                    @foreach ($measures as $measure)
+                    <option selected value="{{ $measure->id }}">{{ $measure->name }}</option>
                     @endforeach
                 </select>
 

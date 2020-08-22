@@ -37,11 +37,11 @@
             <a href="{{ route('products.edit',$product->id) }}">
                 <tr>
                     <td>{{ $product->id }}</td>
-                    <td>{{ $product->descricao }}</td>
-                    <td>{{ $product->quantidade }}</td>
-                    <td>{{ $product->preco }}</td>
-                    <td>{{ $product->custo}}</td>
-                    <!-- <td value="{{ $product->unidadeMedida_id }}">{{ $unidadesMedidas->unidadeMedida }}</td> -->
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->number }}</td>
+                    <td>{{ $product->price }}</td>
+                    <td>{{ $product->cost}}</td>
+                    <td value="{{ $product->measure_id }}">{{ $product->measure_id }}</td>
 
             </a>
             <td>

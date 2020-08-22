@@ -16,8 +16,8 @@ class CreateRevenueTable extends Migration
         Schema::create('renevue', function (Blueprint $table) {
             $table->id();
             $table->date('dueDate');
-            // $table->integer('account_id')->unsigned();
-            $table->foreignId('account_id')->references('id')->on('accounts')->onDelete('cascade');
+            $table->unsignedBigInteger('account_id');
+            $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
             $table->string('description');
             $table->float('value');
             $table->string('document')->nullable();;

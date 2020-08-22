@@ -8,9 +8,7 @@ class Measure extends Model
 {   
     // protected $table = 'measures';
     protected $fillable = [
-        'unidadeMedida'
-
-          
+        'measure',
     ];
 
     

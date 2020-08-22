@@ -7,18 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'descricao', 'quantidade',
-        'preco', 'custo',
-        'unidadeMedida_id',
-        'codBarras',
-        'obs',
-        'unidadeMedida'
+        'name', 'number',
+        'price', 'cost',
+        'measure_id',
+        'barCod',
+        'note',
 
     ];
 
     public function measure() {
         return $this->hasOne(Measure::class); 
 
+    }
+
+    public function measures(){
+        return $this->belongsTo(Product::class);
     }
 
     

@@ -11,30 +11,30 @@ class ProductController extends Controller
 
     public function index()
     {
-        $unidadeMedidas = Measure::all();
+        $measures = Measure::all();
         $products = Product::latest()->paginate(5);
 
-        return view('products.index', ['unidadeMedidas' => $unidadeMedidas, 'products' => $products])
+        return view('products.index', ['measures' => $measures, 'products' => $products])
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
 
-        $unidadeMedidas = Measure::all();
-        return view('products.create', ['unidadeMedidas' => $unidadeMedidas]);
+        $measures = Measure::all();
+        return view('products.create', ['measures' => $measures]);
     }
 
     public function store(Request $request)
     {
 
-        $request->validate([
-            'descricao' => 'required',
-            'quantidade' => 'required',
-            'preco' => 'required',
-            'custo' => 'required',
-            'unidadeMedida_id' => 'required',
-        ]);
+        // $request->validate([
+        //     'description' => 'required',
+        //     'quantidade' => 'required',
+        //     'preco' => 'required',
+        //     'custo' => 'required',
+        //     'unidadeMedida_id' => 'required',
+        // ]);
 
         Product::create($request->all());
 

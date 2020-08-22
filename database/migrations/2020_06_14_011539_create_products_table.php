@@ -11,6 +11,8 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('measure_id');
+            $table->foreign('measure_id')->references('id')->on('measures')->onDelete('cascade');
             $table->string('name', 100);
             $table->float('number', 10, 2);
             $table->float('price', 10, 2);
