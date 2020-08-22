@@ -9,10 +9,19 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
 
+    protected $product, $measure;
+
+    public function __construct(Product $product, Measure $measure)
+    {
+        $this->product = $product;
+        $this->measure = $measure;
+    }
+
     public function index()
     {
-        $measures = Measure::all();
-        $products = Product::latest()->paginate(5);
+ 
+        $product = $this->product->find();
+        $measures = $product->measures()->paginate();
 
         return view('products.index', ['measures' => $measures, 'products' => $products])
             ->with('i', (request()->input('page', 1) - 1) * 5);

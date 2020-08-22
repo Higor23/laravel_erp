@@ -41,7 +41,7 @@
                     <td>{{ $product->number }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->cost}}</td>
-                    <td value="{{ $product->measure_id }}">{{ $product->measure_id }}</td>
+                    <td>{{ $measure->name }}</td>
 
             </a>
             <td>
