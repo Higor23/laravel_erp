@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 Route::resource('/clients', 'ClientController');
-Route::get('products/', 'ProductController@index')->name('products');
-// Route::resource('/products', 'ProductController');
+// Route::get('products/', 'ProductController@index')->name('products');
+Route::resource('/products', 'ProductController');
 Route::resource('/industry', 'IndustryController');
 Route::resource('/providers', 'ProviderController');
 Route::resource('/accounts', 'AccountController');

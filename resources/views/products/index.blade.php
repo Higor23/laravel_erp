@@ -4,7 +4,7 @@
 <div class="form-client">
     <h4 class="h4">Produtos</h4>
     <div class="btn-cad">
-        <a href="{{ route('products.create') }}">
+    <a href="{{ route('products.create') }}">
             <button type=" button" class="btn btn-success">Novo Produto</button>
         </a>
 
@@ -26,7 +26,6 @@
                 <th scope="col">Qtd.</th>
                 <th scope="col">Preço</th>
                 <th scope="col">Custo</th>
-                <th scope="col">Und. Medida</th>
                 <th scope="col"></th>
 
             </tr>
@@ -34,15 +33,13 @@
 
         <tbody>
             @foreach ($products as $product)
-            <a href="{{ route('products.edit',$product->id) }}">
+
                 <tr>
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->number }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->cost}}</td>
-                    <td>{{ $measure->name }}</td>
-
             </a>
             <td>
                 <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Detalhes</a>
