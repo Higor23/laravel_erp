@@ -26,7 +26,8 @@
                 <th scope="col">Qtd.</th>
                 <th scope="col">Preço</th>
                 <th scope="col">Custo</th>
-                <th scope="col"></th>
+                <th scope="col">Unidade de Medida</th>
+                <th scope="col">Ações</th>
 
             </tr>
         </thead>
@@ -40,14 +41,18 @@
                     <td>{{ $product->number }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->cost}}</td>
+                    @foreach($measures as $measure)
+                    <td>{{ $product->measure_id }} {{ $measure->name }}  </td>
+                    @endforeach
             </a>
+            
             <td>
-                <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Detalhes</a>
+                <a class="btn btn-primary" href="{{ route('products.edit', [$product->id]) }}">Detalhes</a>
             </td>
 </tr>
-
+@endforeach
         </tbody>
-        @endforeach
+       
 
 
     </table>

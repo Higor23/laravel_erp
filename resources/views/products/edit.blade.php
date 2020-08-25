@@ -12,48 +12,49 @@
     </div>
 
     <!-- Formulário de cadastro de clientes -->
-    <form action="{{ route('products.update', $product->id) }}" method="POST">
+    <form action="{{ route('products.update', [$product->id]) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">
             <label>Descrição</label>
-            <input type="text" class="form-control" name="descricao" placeholder="Descrição do Produto" value="{{ $product->descricao }}">
+            <input type="text" class="form-control" name="name" placeholder="Descrição do Produto" value="{{ $product->name }}">
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-1">
                 <label>Qtd.</label>
-                <input type=" text" class="form-control" name="quantidade" placeholder="Qtd." value="{{ $product->quantidade }}">
+                <input type=" text" class="form-control" name="number" placeholder="Qtd." value="{{ $product->number }}">
             </div>
             <div class="form-group col-md-2">
                 <label>Preço</label>
-                <input type=" text" class="form-control" name="preco" placeholder="0,00" value="{{ $product->preco }}">
+                <input type=" text" class="form-control" name="price" placeholder="0,00" value="{{ $product->price }}">
             </div>
             <div class="form-group col-md-2">
                 <label>Custo</label>
-                <input type=" text" class="form-control" name="custo" placeholder="0,00" value="{{ $product->custo }}">
-            </div>
+                <input type=" text" class="form-control" name="cost" placeholder="0,00" value="{{ $product->cost }}">
+            </div>            
+
 
             <div class="form-group col-md-2"">
                 <label for=" inputState">Unidade de medida</label>
 
-                <select id="inputState" class="form-control" name="unidadeMedida_id">
+                <select id="inputState" class="form-control" name="measure_id">
                     <option selected>Selecione</option>
-                    @foreach ($unidadeMedidas as $unidade)
-                    <option selected value="{{ $unidade->id }}">{{ $unidade->unidadeMedida }}</option>
+                    @foreach ($measures as $measure)
+                    <option selected value="{{ $product->measure_id }}">{{ $measure->name }}</option>
                     @endforeach
                 </select>
 
             </div>
             <div class="form-group col-md-3">
                 <label>Código de Barras</label>
-                <input type=" text" class="form-control" name="codBarras" placeholder="código de barras" value="{{ $product->codBarras }}">
+                <input type=" text" class="form-control" name="codBar" placeholder="código de barras" value="{{ $product->codBar }}">
             </div>
 
         </div>
         <div class="form-group">
             <label for="observacoes">Observações</label>
-            <input type="text" class="form-control" name="obs" placeholder="Observações" value="{{ $product->observacoes }}">
+            <input type="text" class="form-control" name="obs" placeholder="Observações" value="{{ $product->obs }}">
         </div>
 
         <button type="submit" class="btn btn-success">Cadastrar</button>

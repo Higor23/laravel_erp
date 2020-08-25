@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $table = 'products';
+
     protected $fillable = [
         'name', 'number',
         'price', 'cost',
@@ -20,8 +22,10 @@ class Product extends Model
 
     // }
 
-    public function measures(){
-        return $this->belongsTo(Product::class);
+    public function measures()
+    {
+        return $this->belongsTo(Measure::class);
+        // $measures = Measure::all();
     }
 
     

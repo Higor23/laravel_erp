@@ -17,14 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+/**
+ * Products
+ */
 Route::resource('/clients', 'ClientController');
-// Route::get('products/', 'ProductController@index')->name('products');
-Route::resource('/products', 'ProductController');
-Route::resource('/industry', 'IndustryController');
+Route::get('products', 'ProductController@index')->name('products.index');
+Route::get('products/create', 'ProductController@create')->name('products.create');
+Route::post('products/store', 'ProductController@store')->name('products.store');
+Route::get('products/{id}/edit/', 'ProductController@edit')->name('products.edit');
+Route::put('products/update', 'ProductController@update')->name('products.update');
+
+// Route::resource('/products', 'ProductController');
+// Route::resource('/industry', 'IndustryController');
 Route::resource('/providers', 'ProviderController');
-Route::resource('/accounts', 'AccountController');
-Route::resource('/renevue', 'RenevueController');
+// Route::resource('/accounts', 'AccountController');
+// Route::resource('/renevue', 'RenevueController');
 
 Auth::routes();
 

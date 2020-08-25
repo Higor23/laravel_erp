@@ -21,11 +21,13 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = Product::all();
+        // $products = Product::all();
+        $products = $this->product->paginate();
+        $measures = Measure::all();
 
 
         return view('products.index', [
-            'products' => $products
+            'products' => $products, 'measures' => $measures
         ]);
         
     }
@@ -40,13 +42,13 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
-            'description' => 'required',
-            'quantidade' => 'required',
-            'preco' => 'required',
-            'custo' => 'required',
-            'unidadeMedida_id' => 'required',
-        ]);
+        // $request->validate([
+        //     'description' => 'required',
+        //     'quantidade' => 'required',
+        //     'preco' => 'required',
+        //     'custo' => 'required',
+        //     'unidadeMedida_id' => 'required',
+        // ]);
 
         Product::create($request->all());
 
@@ -62,10 +64,17 @@ class ProductController extends Controller
     }
 
 
-    public function edit(Product $product)
+    public function edit($id)
+    
     {
-        $unidadeMedidas = Measure::all();
-        return view('products.edit', ['product'=>$product, 'unidadeMedidas' =>  $unidadeMedidas]);
+        
+        $product = $this->product->find($id);
+
+        $measures = Measure::all();
+ 
+        
+
+        return view('products.edit', ['product' => $product, 'measures' =>  $measures]);
     }
 
 

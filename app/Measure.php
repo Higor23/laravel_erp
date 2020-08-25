@@ -6,10 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Measure extends Model
 {   
-    // protected $table = 'measures';
+    protected $table = 'measures';
+
     protected $fillable = [
-        'measure',
+        'name', 'id'
     ];
+    
+    public function measures()
+    {
+        return $this->hasMany(Product::class);
+    }
 
     
 }
