@@ -20,13 +20,15 @@ Route::get('/', function () {
 /**
  * Products
  */
-Route::resource('/clients', 'ClientController');
-Route::get('products', 'ProductController@index')->name('products.index');
-Route::get('products/create', 'ProductController@create')->name('products.create');
-Route::post('products/store', 'ProductController@store')->name('products.store');
-Route::get('products/{id}/edit/', 'ProductController@edit')->name('products.edit');
-Route::put('products/update', 'ProductController@update')->name('products.update');
 
+Route::get('products', 'ProductController@index')->name('products.index');
+Route::get('product/create', 'ProductController@create')->name('product.create');
+Route::post('product/store', 'ProductController@store')->name('product.store');
+Route::get('product/{id}/edit', 'ProductController@edit')->name('product.edit');
+Route::put('product/update/{id}', 'ProductController@update')->name('product.update');
+Route::get('product/{id}/show', 'ProductController@show')->name('product.show');
+
+Route::resource('/clients', 'ClientController');
 // Route::resource('/products', 'ProductController');
 // Route::resource('/industry', 'IndustryController');
 Route::resource('/providers', 'ProviderController');

@@ -4,7 +4,7 @@
 <div class="form-client">
     <h4 class="h4">Produtos</h4>
     <div class="btn-cad">
-    <a href="{{ route('products.create') }}">
+    <a href="{{ route('product.create') }}">
             <button type=" button" class="btn btn-success">Novo Produto</button>
         </a>
 
@@ -41,13 +41,10 @@
                     <td>{{ $product->number }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->cost}}</td>
-                    @foreach($measures as $measure)
-                    <td>{{ $product->measure_id }} {{ $measure->name }}  </td>
-                    @endforeach
-            </a>
-            
+                    <td>{{ $product->measure->name }}</td>
             <td>
-                <a class="btn btn-primary" href="{{ route('products.edit', [$product->id]) }}">Detalhes</a>
+                <a class="btn btn-warning" href="{{ route('product.show', [$product->id]) }}">Ver</a>
+                <a class="btn btn-primary" href="{{ route('product.edit', [$product->id]) }}">Editar</a>
             </td>
 </tr>
 @endforeach

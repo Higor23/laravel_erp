@@ -21,7 +21,6 @@ class ProductController extends Controller
     public function index()
     {
 
-        // $products = Product::all();
         $products = $this->product->paginate();
         $measures = Measure::all();
 
@@ -56,38 +55,41 @@ class ProductController extends Controller
     }
 
 
-    public function show(Product $product)
+    public function show($id)
     {
-        
-        
-        return view('products.show', compact('product'));
+        $product = $this->product->find($id);
+
+        if(!$product){
+            return redirect()->back();
+        }
+
+        return view('products.show', ['product'=> $product]);
     }
 
 
     public function edit($id)
     
     {
-        
         $product = $this->product->find($id);
-
-        $measures = Measure::all();
- 
         
-
+        $measures = $this->measure::all();
+        
         return view('products.edit', ['product' => $product, 'measures' =>  $measures]);
     }
 
 
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'descricao' => 'required',
-            'quantidade' => 'required',
-            'preco' => 'required',
-            'custo' => 'required',
-            'unidadeMedida_id' => 'required',
-        ]);
+        $product = $this->product->find($id);
+        // $request->validate([
+        //     'descricao' => 'required',
+        //     'quantidade' => 'required',
+        //     'preco' => 'required',
+        //     'custo' => 'required',
+        //     'unidadeMedida_id' => 'required',
+        // ]);
 
+        
         $product->update($request->all());
 
         return redirect()->route('products.index');

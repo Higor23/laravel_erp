@@ -9,10 +9,10 @@ class Measure extends Model
     protected $table = 'measures';
 
     protected $fillable = [
-        'name', 'id'
+        'name', 'id',
     ];
     
-    public function measures()
+    public function product()
     {
         return $this->hasMany(Product::class);
     }

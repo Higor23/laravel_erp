@@ -11,54 +11,19 @@
         <a class="btn btn-primary" href="{{ route('products.index') }}">Voltar</a>
     </div>
 
-    <!-- Formulário de cadastro de clientes -->
-    <form action="{{ route('products.update', $product->id) }}" method="POST">
-        @csrf
-        @method('PUT')
-        <div class="form-group">
-            <label>Descrição</label>
-            <input type="text" class="form-control" name="descricao" placeholder="Descrição do Produto" value="{{ $product->descricao }}">
+    <!-- Dados do cliente -->
+    <div class="card">
+
+        <div class="card-body">
+            <ul>
+                <li><strong>Nome:</strong> {{ $product->name }} </li>
+                <li><strong>Quantidade:</strong> {{ $product->number }} </li>
+                <li><strong>Preço:</strong> {{ $product->price }} </li>
+                <li><strong>Custo:</strong> {{ $product->cost }} </li>
+                <li><strong>Unidade de medida:</strong> {{ $product->measure->name }} </li>
+                <li><strong>Código de Barras:</strong> {{ $product->codBar }} </li>
+                <li><strong>Observações:</strong> {{ $product->note }} </li>
+            </ul>
         </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-1">
-                <label>Qtd.</label>
-                <input type=" text" class="form-control" name="quantidade" placeholder="Qtd." value="{{ $product->quantidade }}">
-            </div>
-            <div class="form-group col-md-2">
-                <label>Preço</label>
-                <input type=" text" class="form-control" name="preco" placeholder="0,00" value="{{ $product->preco }}">
-            </div>
-            <div class="form-group col-md-2">
-                <label>Custo</label>
-                <input type=" text" class="form-control" name="custo" placeholder="0,00" value="{{ $product->custo }}">
-            </div>
-
-            <div class="form-group col-md-2"">
-                <label for=" inputState">Unidade de medida</label>
-
-                <select id="inputState" class="form-control" name="unidadeMedida_id">
-                    <option selected>Selecione</option>
-                    @foreach ($unidadeMedidas as $unidade)
-                    <option selected value="{{ $unidade->id }}">{{ $unidade->unidadeMedida }}</option>
-                    @endforeach
-                </select>
-
-            </div>
-            <div class="form-group col-md-3">
-                <label>Código de Barras</label>
-                <input type=" text" class="form-control" name="codBarras" placeholder="código de barras" value="{{ $product->codBarras }}">
-            </div>
-
-        </div>
-        <div class="form-group">
-            <label for="observacoes">Observações</label>
-            <input type="text" class="form-control" name="obs" placeholder="Observações" value="{{ $product->observacoes }}">
-        </div>
-
-        <button type="submit" class="btn btn-success">Cadastrar</button>
-
-    </form>
-</div>
-
-@endsection
+    </div>
+    @endsection

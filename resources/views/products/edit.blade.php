@@ -12,7 +12,7 @@
     </div>
 
     <!-- Formulário de cadastro de clientes -->
-    <form action="{{ route('products.update', [$product->id]) }}" method="POST">
+    <form action="{{ route('product.update', [$product->id]) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">
@@ -32,8 +32,7 @@
             <div class="form-group col-md-2">
                 <label>Custo</label>
                 <input type=" text" class="form-control" name="cost" placeholder="0,00" value="{{ $product->cost }}">
-            </div>            
-
+            </div>    
 
             <div class="form-group col-md-2"">
                 <label for=" inputState">Unidade de medida</label>
@@ -41,7 +40,7 @@
                 <select id="inputState" class="form-control" name="measure_id">
                     <option selected>Selecione</option>
                     @foreach ($measures as $measure)
-                    <option selected value="{{ $product->measure_id }}">{{ $measure->name }}</option>
+                    <option value="{{ $measure->id }}">{{ $measure->name }}</option>
                     @endforeach
                 </select>
 
@@ -50,8 +49,8 @@
                 <label>Código de Barras</label>
                 <input type=" text" class="form-control" name="codBar" placeholder="código de barras" value="{{ $product->codBar }}">
             </div>
-
         </div>
+
         <div class="form-group">
             <label for="observacoes">Observações</label>
             <input type="text" class="form-control" name="obs" placeholder="Observações" value="{{ $product->obs }}">

@@ -17,15 +17,10 @@ class Product extends Model
 
     ];
 
-    // public function measures() {
-    //     return $this->hasOne(Measure::class); 
-
-    // }
-
-    public function measures()
+    public function measure()
     {
         return $this->belongsTo(Measure::class);
-        // $measures = Measure::all();
+
     }
 
     
