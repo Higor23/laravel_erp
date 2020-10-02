@@ -41,13 +41,12 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-        // $request->validate([
-        //     'description' => 'required',
-        //     'quantidade' => 'required',
-        //     'preco' => 'required',
-        //     'custo' => 'required',
-        //     'unidadeMedida_id' => 'required',
-        // ]);
+        $request->validate([
+            'description' => 'required',
+            'quantidade' => 'required',
+            'preco' => 'required',
+            'unidadeMedida_id' => 'required',
+        ]);
 
         Product::create($request->all());
 
@@ -81,13 +80,13 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $product = $this->product->find($id);
-        // $request->validate([
-        //     'descricao' => 'required',
-        //     'quantidade' => 'required',
-        //     'preco' => 'required',
-        //     'custo' => 'required',
-        //     'unidadeMedida_id' => 'required',
-        // ]);
+
+        $request->validate([
+            'descricao' => 'required',
+            'quantidade' => 'required',
+            'preco' => 'required',
+            'unidadeMedida_id' => 'required',
+        ]);
 
         
         $product->update($request->all());

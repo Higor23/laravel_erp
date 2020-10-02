@@ -12,7 +12,7 @@
     </div>
 
     <!-- Formulário de cadastro de clientes -->
-    <form action="{{ route('products.store') }}" method="POST">
+    <form action="{{ route('product.store') }}" method="POST">
         @csrf
         <div class="form-group">
             <label>Descrição</label>
@@ -39,7 +39,7 @@
                 <select id="inputState" class="form-control" name="measure_id">
                 <option selected>Selecione</option>
                     @foreach ($measures as $measure)
-                    <option selected value="{{ $measure->id }}">{{ $measure->name }}</option>
+                    <option value="{{ $measure->id }}">{{ $measure->name }}</option>
                     @endforeach
                 </select>
 
